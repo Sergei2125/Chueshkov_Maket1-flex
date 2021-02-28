@@ -1,0 +1,342 @@
+html {
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: content-box;
+}
+.container {
+    width: 1144px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+.header{
+    background-image: url(./../images/headerImage.jpg);
+    background-repeat: no-repeat;
+    height: 100vh;
+    z-index: 5;
+}
+.header__fixed{    
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    border-bottom: 1px solid #A1A1A1;
+    z-index: 1;
+}
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 0px;
+    
+}
+.nav_item{
+    
+}
+.nav__link {
+    padding: 20px 0px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-decoration: none;
+    margin-left: 20px;
+    color: #FFFFFF;
+}
+.nav__link.active,
+.nav__link:hover{
+    border-bottom: 1px solid #FFF;
+}
+
+
+.header__content {
+    text-align: center;
+}
+
+.header__studio {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    padding-top: 200px;
+    color: #FFFFFF;
+}
+
+.header__h1 {
+    display: inline-block;
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 64px;
+    max-width: 829px;
+    padding: 20px 0px 50px 0px;
+    color: #FFFFFF;
+}
+
+.header__btn{}
+
+.btn{
+    display: inline-block;
+    text-decoration: none;
+    padding: 13px 37px 12px 37px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    background-color: #4985FF;
+    color: #FFFFFF;
+    border-radius: 30px;
+}
+.btn:hover,
+.btn:focus{
+    opacity: 0.8;
+}
+
+
+
+.header__link { }
+
+    /*Начинается следующая секция design*/
+
+.design{
+    text-align: center;
+    margin: 110px 0px 105px 0px;
+}
+.design__header{
+    
+}
+.h2 {
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 53px;
+}
+
+.design__title{
+    display: inline-block;
+    max-width: 739px;
+    color: #323232;
+}
+.design__content {
+    padding: 50px 0px 70px 0px;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 25px;
+    max-width: 730px;
+
+    color: #999999;
+}
+
+.design__create{
+    padding-bottom: 55px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.design__create--website{
+    display: flex;
+    align-items: flex-start;
+}
+.website__picture{
+    border: 1px solid #c9c5c5d2 ; /*задал свой цвет, тот который должен быть не виден*/
+    border-radius: 65px;
+    padding: 10px;
+}
+
+.website__img{
+    border: 1px solid #4985FF ;
+    border-radius: 55px;
+    padding: 25px;
+}
+
+.website__content{
+}
+
+.h3{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+
+    color: #000000;
+}
+.website__title{
+    padding: 46px 0px 12px 0px;
+}
+
+.website__text{
+    font-size: 14px;
+    line-height: 22px;
+    max-width: 222px;
+    color: #999999;
+}
+
+    /*Начинается следующая секция standart*/
+
+.standart{
+    background-color: #c9c5c5d2;
+}
+.standart__inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 0px 90px 0px;
+    border-bottom: 1px solid #E0E0E0; /*посмотреть линию*/
+}
+.standart__text{}
+.standart__text--h2{}
+.standart__text--p{
+    font-size: 16px;
+    line-height: 25px;
+    padding: 40px 0px 30px 0px;
+    color: #999999;
+}
+.standart__text--a{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: #4985FF;
+}
+.standart__img{}
+
+.standart__items{
+    display: flex;
+    justify-content: space-between;
+    padding: 70px 70px;
+}
+.standart__item{
+    display: flex;
+    max-width: 104px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.standart__item--span{
+    font-size: 36px;
+    line-height: 53px;
+    color: #000000;
+}
+
+.standart__item--p{
+    font-size: 16px;
+    line-height: 25px;
+
+    color: #999999;
+}
+
+    /*Начало новой секции service*/
+.service{
+    background-color: #504DC2;
+    height: 490px;
+    margin-bottom: 480px;
+}
+.service__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 0px 70px 0px;
+}
+.service__title{
+    color: #FFFFFF;
+    max-width: 540px;
+}
+.service__content{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #E0E0E0;
+    padding-bottom: 85px;
+}
+.service-item{
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+}
+.service-item__img{}
+
+.service-item__h3{
+    padding: 30px 0px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+
+    color: #000000;
+}
+.service-item_span:first-child{
+    color: #4985FF;
+}
+.service-item__p{
+    font-size: 16px;
+    line-height: 25px;
+
+    color: #999999;
+}
+.service-item__a{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    padding-top: 30px;
+
+    color: #4985FF;
+}
+
+/*Начало новой секции project*/
+
+.project{
+    text-align: center;
+    background-color: #c9c5c5d2;
+    padding: 100px 0px 130px 0px;
+}
+.project__title{
+    
+}
+.project__text{
+    display: inline-block;
+    padding: 50px 0px 70px 0px;
+    font-size: 16px;
+    line-height: 25px;
+    text-align: center;
+    width: 730px;
+
+    color: #999999;
+}
+.project__content{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 50px;
+}
+
+/*Начало новой секции work-video*/
+
+.work-video{
+    position: relative;
+    background-image: url(./../images/work.jpg);
+    background-repeat: no-repeat;
+    max-width: 100%;
+    height: 570px;
+    margin-bottom: 165px;
+    text-align: center;
+    color: #FFF;
+}
+.work-video__title{
+    padding: 70px 0px 30px 0px;
+}
+.work-video__test{
+    font-size: 16px;
+    line-height: 25px;
+}
+.work-video__img{
+    position: absolute;
+    top: 220px;
+    left: 0px;
+    left: 475px;
+    max-width: 100%;
+    padding-bottom: 85px;
+    border-bottom: 1px solid black;
+    
+}
+
+/*Начало новой секции email*/
+
+.email{
+    padding: 85px 0px;
+    text-align: center;
+}
+.email__title{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+
+    color: #000000;
+}
