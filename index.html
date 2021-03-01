@@ -12,9 +12,11 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- можно использовать html5 тег "header" вместо div  -->
     <div class="header">
-        <div class="nav__fixed">
+        <div class="nav__fixed js-nav-fixed">
             <div class="container">
+
                 <ul class="nav">
                     <li class="nav__item">
                         <a class="nav__link active" href="#">Главная</a>
@@ -35,6 +37,7 @@
                 
             </div>
         </div>
+        <!--  http://prntscr.com/10alzcb -->
         <div class="header__content">
             <p class="header__studio">Передовая IT студия</p>
             <h1 class="header__h1">Мы создаем легкие решения сложных задач и проблем</h1>
@@ -50,13 +53,18 @@
             <p class="design__content">Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.</p>
             </div>  
             <div class="design__create">
+                <!-- design-website это блок по БЭМ, почему его элементы
+                website__picture, а не design-website__picture ? -->
                 <div class="design-website">
                     <div class="website__picture">
                         <p class="website__img">
                         <img  src="./assets/images/website.svg" alt="website">
                         </p>
                     </div>
+                    <!-- в этих блоках текст не должен центрироваться по макету -->
                     <div class="website__content">
+                        <!-- если я добавлю в заголовок мноого текста то поломаю верстку,
+                        т.е. лучше задать max-width для блока design-website, а не website__text -->
                         <h3 class="h3 website__title">Создание сайтов</h3>
                         <p class="website__text">Lorem Ipsum - это текст- "рыба", часто используе в печати и вэб-дизайне.</p>
                     </div>
@@ -84,6 +92,7 @@
                     </div>
                 </div>
             </div>
+            <!-- design немного изменился ^_^ -->
             <div class="dising__btn">
                 <a class="btn" href="#">Все услуги</a>
             </div>
@@ -195,8 +204,11 @@
         </div>
     </section>
     <section class="email">
+        <!-- можно обернуть в container, просто дать ему модификатор, например
+        container--small и сделать поменьше. -->
         <h3 class="email__title">Подпишитесь на нашу рассылку</h3>
         <p class="email__text">Полезные статьи, акции, новости - получите все это сейчас!</p>
+        <!-- забегая вперед сюда лучше тег form -->
         <div class="form">
         <input class="form__input" type="text" placeholder="Ваш e-mail">
         <button class="form__button" >Подписаться</button>
@@ -213,6 +225,7 @@
                     <p class="info__text">+8 777 555 66 99</p>
                     <p class="info__text">Москва, Бульвар Ленина 33</p>
                 </div>
+                <!-- это менюшка -->
                 <div>
                     <h3 class="info__title">Основные ссылки</h3>
                     <p class="info__text">Главная</p>
@@ -220,6 +233,7 @@
                     <p class="info__text">Наши услуги</p>
                     <p class="info__text">Контакты</p>
                 </div>
+                <!-- и это менюшка  -->
                 <div>
                     <h3 class="info__title">Наши проекты</h3>
                     <p class="info__text">РосНано</p>
@@ -227,6 +241,7 @@
                     <p class="info__text">Проект “Восток”</p>
                     <p class="info__text">ТЭЦ Калининграда</p>
                 </div>
+                <!-- и это ссылки на соцсети  -->
                 <div>
                     <h3 class="info__title">Социальные сети</h3>
                     <p class="info__text">VK.com</p>
@@ -237,16 +252,31 @@
             </div>
         </div>
     </section>
+    <!-- здесь заменить на div, 
+        тег article обозначает законченный, самостоятельный фрагмент инфо,
+    который можно взять с одного сайта и перенести на другой,
+    например статья/пост в блоге/ сообщение на форуме -->
     <article class="article">
         (с) 2019. Все права защищены.
     </article>
 
 <script>
 window.addEventListener('scroll',function(event){
-	let div=document.querySelector('.nav__fixed');
+    // а если понадобится плавный переход? лучше вешать/удалять класс(состояние)
+    // и изменять свойства css в зависимости от наличия отсутсвия класса(т.е. описывать состояние).
+    // + совет не для React но в принципе - лучше не вешать скрипты
+    // на классы для стилей, если нужно зацепить элемент лучше создать отдельный класс или id
+
+	// let div=document.querySelector('.nav__fixed');
+    // if (pageYOffset<5) { 
+    //     div.style.background = 'none';
+    // } else div.style.background = '#999999';
+
+    let nav=document.querySelector('.js-nav-fixed');
     if (pageYOffset<5) { 
-        div.style.background = 'none';
-    } else div.style.background = '#999999';
+        nav.classList.remove("is-fixed");
+    } else nav.classList.add("is-fixed");
+
 })
 </script>
 </body>

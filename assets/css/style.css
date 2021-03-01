@@ -1,5 +1,6 @@
 html {
     font-family: 'Montserrat', sans-serif;
+    /* излишне, это свойство по умолчанию */
     box-sizing: content-box;
 }
 .container {
@@ -8,11 +9,14 @@ html {
     margin: 0 auto;
 }
 .header{
-    background-image: url(./../images/headerImage.jpg);
+    /* background-image: url(./../images/headerImage.jpg); */
+    /* если нужно выйти из директории, можно сократить запись */
+    background-image: url(../images/headerImage.jpg);
     background-repeat: no-repeat;
     height: 100vh;
     z-index: 5;
 }
+/* переносим стилизацию из скрипта сюда (описываем обычное состояние) */
 .nav__fixed{     /*задаем фиксированную позицию меню навигации*/
     position: fixed;
     top: 0px;
@@ -20,6 +24,14 @@ html {
     left: 0px;
     border-bottom: 1px solid #A1A1A1;
     z-index: 2;
+
+    /* забегая вперед плавность перехода */
+    transition: background-color ease 0.3s;
+}
+/* переносим стилизацию из скрипта сюда,
+(описываем состояние при скролле) */
+.nav__fixed.is-fixed {
+    background: #c9c5c5;
 }
 .nav {     /*позиционирование меню + отступы*/
     display: flex;
@@ -110,6 +122,7 @@ html {
     line-height: 25px;
     max-width: 730px;
 
+    /* можно использовать сокращенную запись цвета  */
     color: #999999;
 }
 
@@ -124,7 +137,10 @@ html {
     align-items: flex-start;
 }
 .website__picture{
+    /* в макете #E0E0E0, а тут 7 букв в цвете это ошибка */
     border: 1px solid #c9c5c5d2 ; /*задал свой цвет, тот который должен быть не виден*/
+    /* чтобы получить ровный круг удобнее использовать 50%
+    и при изменении размеров не поломается */
     border-radius: 65px;
     padding: 10px;
 }
@@ -212,6 +228,10 @@ html {
     /*Начало новой секции service*/
 .service{
     background-color: #504DC2;
+    /* лучше не фиксировать высоту и добивать отступом,
+    при изменении контента верстка сломается.
+    лучше часть фона сделать либо псевдоэлементом(before/after)
+    либо посмотреть в сторону свойства background-image: linear-gradient(...) */
     height: 490px;
     margin-bottom: 480px;
 }
@@ -297,6 +317,7 @@ html {
     background-image: url(./../images/work.jpg);
     background-repeat: no-repeat;
     max-width: 100%;
+    /* в этой секции допустимо фиксануть высоту */
     height: 570px;
     margin-bottom: 165px;
     text-align: center;
@@ -319,6 +340,7 @@ html {
     border-bottom: 1px solid #E0E0E0;
 }
 .play{
+    /* осталось подчеркивание у ссылки, убрать */
     position: absolute;
     top: 175px;
     left: 345px;
