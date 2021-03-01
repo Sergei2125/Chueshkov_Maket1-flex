@@ -13,23 +13,21 @@ html {
     height: 100vh;
     z-index: 5;
 }
-.header__fixed{    
+.nav__fixed{     /*задаем фиксированную позицию меню навигации*/
     position: fixed;
     top: 0px;
     right: 0px;
     left: 0px;
     border-bottom: 1px solid #A1A1A1;
-    z-index: 1;
+    z-index: 2;
 }
-.nav {
+.nav {     /*позиционирование меню + отступы*/
     display: flex;
     justify-content: flex-end;
     padding: 20px 0px;
     
 }
-.nav_item{
-    
-}
+.nav_item{}
 .nav__link {
     padding: 20px 0px;
     font-weight: 500;
@@ -39,7 +37,7 @@ html {
     margin-left: 20px;
     color: #FFFFFF;
 }
-.nav__link.active,
+.nav__link.active,       /*задаем событие наведения мыши на элементы меню*/
 .nav__link:hover{
     border-bottom: 1px solid #FFF;
 }
@@ -69,7 +67,7 @@ html {
 
 .header__btn{}
 
-.btn{
+.btn{   /*задаем общий класс для большинства кнопок-ссылок на странице*/
     display: inline-block;
     text-decoration: none;
     padding: 13px 37px 12px 37px;
@@ -80,17 +78,13 @@ html {
     color: #FFFFFF;
     border-radius: 30px;
 }
-.btn:hover,
+.btn:hover,  /*событие при наведении мыши на кнопку-ссылку*/
 .btn:focus{
     opacity: 0.8;
 }
-
-
-
 .header__link { }
 
     /*Начинается следующая секция design*/
-
 .design{
     text-align: center;
     margin: 110px 0px 105px 0px;
@@ -125,7 +119,7 @@ html {
     justify-content: space-between;
 }
 
-.design__create--website{
+.design-website{
     display: flex;
     align-items: flex-start;
 }
@@ -162,7 +156,7 @@ html {
     color: #999999;
 }
 
-    /*Начинается следующая секция standart*/
+/*Начинается следующая секция standart*/
 
 .standart{
     background-color: #c9c5c5d2;
@@ -174,15 +168,15 @@ html {
     padding: 100px 0px 90px 0px;
     border-bottom: 1px solid #E0E0E0; /*посмотреть линию*/
 }
-.standart__text{}
-.standart__text--h2{}
-.standart__text--p{
+.standart-text{}
+.standart-text__h2{}
+.standart-text__p{
     font-size: 16px;
     line-height: 25px;
     padding: 40px 0px 30px 0px;
     color: #999999;
 }
-.standart__text--a{
+.standart-text__a{
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
@@ -191,24 +185,24 @@ html {
 }
 .standart__img{}
 
-.standart__items{
+.standart__box{
     display: flex;
     justify-content: space-between;
     padding: 70px 70px;
 }
-.standart__item{
+.standart-item{
     display: flex;
     max-width: 104px;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.standart__item--span{
+.standart-item__span{
     font-size: 36px;
     line-height: 53px;
     color: #000000;
 }
 
-.standart__item--p{
+.standart-item__p{
     font-size: 16px;
     line-height: 25px;
 
@@ -252,7 +246,7 @@ html {
 
     color: #000000;
 }
-.service-item_span:first-child{
+.service-item__span:first-child{
     color: #4985FF;
 }
 .service-item__p{
@@ -317,15 +311,36 @@ html {
 }
 .work-video__img{
     position: absolute;
-    top: 220px;
+    top: 200px;
     left: 0px;
     left: 475px;
     max-width: 100%;
     padding-bottom: 85px;
-    border-bottom: 1px solid black;
-    
+    border-bottom: 1px solid #E0E0E0;
 }
-
+.play{
+    position: absolute;
+    top: 175px;
+    left: 345px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    border: 1px solid #FFF;
+    padding: 20px 40px 20px 40px;
+    border-radius: 50px;
+}
+.play:hover{
+    background-color: #504DC2;
+}
+.play__img{}
+.play__text{
+    padding-left: 20px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 25px;
+    color: #FFF;
+    text-decoration: none;
+}
 /*Начало новой секции email*/
 
 .email{
@@ -337,6 +352,94 @@ html {
     font-size: 18px;
     line-height: 22px;
     text-align: center;
+    padding-bottom: 20px;
 
     color: #000000;
+}
+.email__text{
+    font-size: 16px;
+    line-height: 25px;
+    text-align: center;
+
+    color: #999999;
+}
+.form{
+    margin: 30px 0px 35px 0px;
+    display: flex;
+    justify-content: center;
+    
+}
+.form__input{
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border: none;
+    border-radius: 25px 0px 0px 25px;
+    width: 269px;
+    padding-left: 30px;
+    font-size: 13px;
+    line-height: 21px;
+
+    color: #999999;
+}
+.form__button{
+    padding: 13px 36px 15px 26px;
+    background-color: #4985FF;
+    border: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    width: 190px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 0px 25px 25px 0px;
+
+    color: #FFFFFF;
+}
+.form__button:hover{
+    opacity: 0.9;
+}
+
+.email__article{
+    font-size: 13px;
+    line-height: 21px;
+    text-align: center;
+
+    color: #999999;
+}
+/*Начало следующей секции info*/
+.info{
+    background-color: #c9c5c5d2;
+}
+.info__content{
+    padding: 70px 0px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #999999;
+    
+}
+.contacts{}
+.info__title{
+    padding-bottom: 5px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+
+    color: #000000;
+}
+.info__text{
+    padding-top: 30px;
+    font-size: 14px;
+    line-height: 22px;
+
+    color: #999999;
+}
+
+/*------------*/
+
+.article{
+    padding: 30px 0px;
+    font-size: 13px;
+    line-height: 21px;
+    text-align: center;
+    background-color: #c9c5c5d2;
+    color: #999999;
 }
