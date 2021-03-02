@@ -9,12 +9,15 @@ html {
     margin: 0 auto;
 }
 .header{
-    /* background-image: url(./../images/headerImage.jpg); */
-    /* если нужно выйти из директории, можно сократить запись */
     background-image: url(../images/headerImage.jpg);
     background-repeat: no-repeat;
     height: 100vh;
+    background-size: auto 100%;
     z-index: 5;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 /* переносим стилизацию из скрипта сюда (описываем обычное состояние) */
 .nav__fixed{     /*задаем фиксированную позицию меню навигации*/
@@ -63,7 +66,6 @@ html {
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
-    padding-top: 200px;
     color: #FFFFFF;
 }
 
@@ -94,7 +96,7 @@ html {
 .btn:focus{
     opacity: 0.8;
 }
-.header__link { }
+.header__link{}
 
     /*Начинается следующая секция design*/
 .design{
