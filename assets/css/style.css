@@ -1,7 +1,5 @@
 html {
     font-family: 'Montserrat', sans-serif;
-    /* излишне, это свойство по умолчанию */
-    box-sizing: content-box;
 }
 .container {
     width: 1144px;
@@ -12,7 +10,7 @@ html {
     background-image: url(../images/headerImage.jpg);
     background-repeat: no-repeat;
     height: 100vh;
-    background-size: auto 100%;
+    background-size: cover;
     z-index: 5;
 
     display: flex;
@@ -40,7 +38,6 @@ html {
     display: flex;
     justify-content: flex-end;
     padding: 20px 0px;
-    
 }
 .nav_item{}
 .nav__link {
@@ -52,23 +49,19 @@ html {
     margin-left: 20px;
     color: #FFFFFF;
 }
-.nav__link.active,       /*задаем событие наведения мыши на элементы меню*/
+.nav__link.active, /*задаем событие наведения мыши на элементы меню*/
 .nav__link:hover{
     border-bottom: 1px solid #FFF;
 }
-
-
 .header__content {
     text-align: center;
 }
-
 .header__studio {
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
     color: #FFFFFF;
 }
-
 .header__h1 {
     display: inline-block;
     font-weight: 800;
@@ -78,9 +71,7 @@ html {
     padding: 20px 0px 50px 0px;
     color: #FFFFFF;
 }
-
 .header__btn{}
-
 .btn{   /*задаем общий класс для большинства кнопок-ссылок на странице*/
     display: inline-block;
     text-decoration: none;
@@ -95,23 +86,21 @@ html {
 .btn:hover,  /*событие при наведении мыши на кнопку-ссылку*/
 .btn:focus{
     opacity: 0.8;
+    transition: 0.3s;
 }
 .header__link{}
-
     /*Начинается следующая секция design*/
 .design{
-    text-align: center;
     margin: 110px 0px 105px 0px;
 }
 .design__header{
-    
+    text-align: center;
 }
 .h2 {
     font-weight: bold;
     font-size: 36px;
     line-height: 53px;
 }
-
 .design__title{
     display: inline-block;
     max-width: 739px;
@@ -124,60 +113,55 @@ html {
     line-height: 25px;
     max-width: 730px;
 
-    /* можно использовать сокращенную запись цвета  */
-    color: #999999;
+    color: #999;
 }
-
 .design__create{
     padding-bottom: 55px;
     display: flex;
     justify-content: space-between;
 }
-
 .design-website{
     display: flex;
     align-items: flex-start;
+    max-width: 353px;
 }
-.website__picture{
-    /* в макете #E0E0E0, а тут 7 букв в цвете это ошибка */
-    border: 1px solid #c9c5c5d2 ; /*задал свой цвет, тот который должен быть не виден*/
+.design-website__picture{
+    border: 1px solid #E0E0E0 ; 
     /* чтобы получить ровный круг удобнее использовать 50%
     и при изменении размеров не поломается */
-    border-radius: 65px;
+    border-radius: 50%;
     padding: 10px;
 }
-
-.website__img{
+.design-website__img{
     border: 1px solid #4985FF ;
-    border-radius: 55px;
+    border-radius: 50%;
     padding: 25px;
 }
-
-.website__content{
+.design-website__content{
+    padding-left: 15px;
 }
-
 .h3{
     font-weight: 600;
     font-size: 18px;
     line-height: 22px;
 
-    color: #000000;
+    color: #000;
 }
-.website__title{
+.design-website__title{
     padding: 46px 0px 12px 0px;
 }
-
-.website__text{
+.design-website__text{
     font-size: 14px;
     line-height: 22px;
-    max-width: 222px;
-    color: #999999;
+    color: #999;
+}
+.disign__btn {
+    text-align: center ;
 }
 
 /*Начинается следующая секция standart*/
-
 .standart{
-    background-color: #c9c5c5d2;
+    background-color: #F6F6F8;
 }
 .standart__inner{
     display: flex;
@@ -192,7 +176,7 @@ html {
     font-size: 16px;
     line-height: 25px;
     padding: 40px 0px 30px 0px;
-    color: #999999;
+    color: #999;
 }
 .standart-text__a{
     font-weight: 500;
@@ -202,7 +186,6 @@ html {
     color: #4985FF;
 }
 .standart__img{}
-
 .standart__box{
     display: flex;
     justify-content: space-between;
@@ -210,32 +193,29 @@ html {
 }
 .standart-item{
     display: flex;
-    max-width: 104px;
+    max-width: 104px; /*Задаем максимальную ширину*/
     flex-wrap: wrap;
     justify-content: space-between;
 }
 .standart-item__span{
     font-size: 36px;
     line-height: 53px;
-    color: #000000;
+    color: #000;
 }
-
 .standart-item__p{
     font-size: 16px;
     line-height: 25px;
 
-    color: #999999;
+    color: #999;
 }
 
     /*Начало новой секции service*/
 .service{
-    background-color: #504DC2;
+    background-image: linear-gradient(#504DC2 50%, #fff 50%);
     /* лучше не фиксировать высоту и добивать отступом,
     при изменении контента верстка сломается.
     лучше часть фона сделать либо псевдоэлементом(before/after)
     либо посмотреть в сторону свойства background-image: linear-gradient(...) */
-    height: 490px;
-    margin-bottom: 480px;
 }
 .service__header{
     display: flex;
@@ -244,29 +224,30 @@ html {
     padding: 100px 0px 70px 0px;
 }
 .service__title{
-    color: #FFFFFF;
-    max-width: 540px;
+    color: #FFF;
+    max-width: 50%;
 }
 .service__content{
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #E0E0E0;
     padding-bottom: 85px;
+    margin: 0px -15px; /*задаем отрицательные отступы для внутренних блоков .service-item */
 }
 .service-item{
     display: flex;
     flex-direction: column;
-    max-width: 350px;
+    margin: 0px 15px; /*задаем отступы*/
+    max-width: 33.3333%;
 }
 .service-item__img{}
-
 .service-item__h3{
     padding: 30px 0px;
     font-weight: 600;
     font-size: 18px;
     line-height: 22px;
 
-    color: #000000;
+    color: #000;
 }
 .service-item__span:first-child{
     color: #4985FF;
@@ -275,7 +256,7 @@ html {
     font-size: 16px;
     line-height: 25px;
 
-    color: #999999;
+    color: #999;
 }
 .service-item__a{
     font-weight: 500;
@@ -287,24 +268,21 @@ html {
 }
 
 /*Начало новой секции project*/
-
 .project{
     text-align: center;
-    background-color: #c9c5c5d2;
+    background-color: #F6F6F8;
     padding: 100px 0px 130px 0px;
 }
-.project__title{
-    
-}
+.project__title{}
 .project__text{
     display: inline-block;
     padding: 50px 0px 70px 0px;
     font-size: 16px;
     line-height: 25px;
     text-align: center;
-    width: 730px;
+    width: 65%;       /*задаем ширину тескта в процентах*/
 
-    color: #999999;
+    color: #999;
 }
 .project__content{
     display: flex;
@@ -313,15 +291,16 @@ html {
 }
 
 /*Начало новой секции work-video*/
-
 .work-video{
     position: relative;
+   
     background-image: url(./../images/work.jpg);
     background-repeat: no-repeat;
     max-width: 100%;
-    /* в этой секции допустимо фиксануть высоту */
+    /* в этой секции допустимо фиксануть высоту (надо разобраться???)*/
     height: 570px;
     margin-bottom: 165px;
+    
     text-align: center;
     color: #FFF;
 }
@@ -342,7 +321,6 @@ html {
     border-bottom: 1px solid #E0E0E0;
 }
 .play{
-    /* осталось подчеркивание у ссылки, убрать */
     position: absolute;
     top: 175px;
     left: 345px;
@@ -352,9 +330,11 @@ html {
     border: 1px solid #FFF;
     padding: 20px 40px 20px 40px;
     border-radius: 50px;
+    text-decoration: none;
 }
 .play:hover{
     background-color: #504DC2;
+    transition: 0.5s;
 }
 .play__img{}
 .play__text{
@@ -365,8 +345,8 @@ html {
     color: #FFF;
     text-decoration: none;
 }
-/*Начало новой секции email*/
 
+/*Начало новой секции email*/
 .email{
     padding: 85px 0px;
     text-align: center;
@@ -431,7 +411,7 @@ html {
 }
 /*Начало следующей секции info*/
 .info{
-    background-color: #c9c5c5d2;
+    background-color: #F6F6F8;
 }
 .info__content{
     padding: 70px 0px;
@@ -459,11 +439,11 @@ html {
 
 /*------------*/
 
-.article{
+.footer{
     padding: 30px 0px;
     font-size: 13px;
     line-height: 21px;
     text-align: center;
-    background-color: #c9c5c5d2;
-    color: #999999;
+    background-color: #F6F6F8;
+    color: #999;
 }
