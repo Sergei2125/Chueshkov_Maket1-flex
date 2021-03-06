@@ -1,8 +1,13 @@
 html {
     font-family: 'Montserrat', sans-serif;
 }
-.container {
+.container{
     width: 1144px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+.container--small{
+    width: 730px;
     padding: 0 15px;
     margin: 0 auto;
 }
@@ -11,8 +16,7 @@ html {
     background-repeat: no-repeat;
     height: 100vh;
     background-size: cover;
-    z-index: 5;
-
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,12 +38,13 @@ html {
 .nav__fixed.is-fixed {
     background: #c9c5c5;
 }
-.nav {     /*позиционирование меню + отступы*/
+/*позиционирование меню + отступы*/
+.nav {     
     display: flex;
     justify-content: flex-end;
     padding: 20px 0px;
 }
-.nav_item{}
+/*.nav_item{}*/
 .nav__link {
     padding: 20px 0px;
     font-weight: 500;
@@ -47,9 +52,10 @@ html {
     line-height: 20px;
     text-decoration: none;
     margin-left: 20px;
-    color: #FFFFFF;
+    color: #FFF;
 }
-.nav__link.active, /*задаем событие наведения мыши на элементы меню*/
+/*задаем событие наведения мыши на элементы меню*/
+.nav__link.active, 
 .nav__link:hover{
     border-bottom: 1px solid #FFF;
 }
@@ -72,7 +78,8 @@ html {
     color: #FFFFFF;
 }
 .header__btn{}
-.btn{   /*задаем общий класс для большинства кнопок-ссылок на странице*/
+/*задаем общий класс для большинства кнопок-ссылок на странице*/
+.btn{   
     display: inline-block;
     text-decoration: none;
     padding: 13px 37px 12px 37px;
@@ -83,13 +90,14 @@ html {
     color: #FFFFFF;
     border-radius: 30px;
 }
-.btn:hover,  /*событие при наведении мыши на кнопку-ссылку*/
+/*событие при наведении мыши на кнопку-ссылку*/
+.btn:hover,  
 .btn:focus{
     opacity: 0.8;
     transition: 0.3s;
 }
 .header__link{}
-    /*Начинается следующая секция design*/
+/*Начинается следующая секция design*/
 .design{
     margin: 110px 0px 105px 0px;
 }
@@ -119,6 +127,7 @@ html {
     padding-bottom: 55px;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 .design-website{
     display: flex;
@@ -127,8 +136,8 @@ html {
 }
 .design-website__picture{
     border: 1px solid #E0E0E0 ; 
-    /* чтобы получить ровный круг удобнее использовать 50%
-    и при изменении размеров не поломается */
+/* чтобы получить ровный круг удобнее использовать 50%
+и при изменении размеров не поломается */
     border-radius: 50%;
     padding: 10px;
 }
@@ -168,7 +177,7 @@ html {
     align-items: center;
     justify-content: space-between;
     padding: 100px 0px 90px 0px;
-    border-bottom: 1px solid #E0E0E0; /*посмотреть линию*/
+    border-bottom: 1px solid #E0E0E0;
 }
 .standart-text{}
 .standart-text__h2{}
@@ -185,6 +194,10 @@ html {
 
     color: #4985FF;
 }
+.standart-text__a:hover{
+    opacity: 0.7;
+    transition: 0.2s;
+}
 .standart__img{}
 .standart__box{
     display: flex;
@@ -193,7 +206,8 @@ html {
 }
 .standart-item{
     display: flex;
-    max-width: 104px; /*Задаем максимальную ширину*/
+    /*Задаем максимальную ширину*/
+    max-width: 104px; 
     flex-wrap: wrap;
     justify-content: space-between;
 }
@@ -212,7 +226,8 @@ html {
     /*Начало новой секции service*/
 .service{
     background-image: linear-gradient(#504DC2 50%, #fff 50%);
-    /* лучше не фиксировать высоту и добивать отступом,
+    padding-bottom: 85px;
+    /*(исправил) лучше не фиксировать высоту и добивать отступом,
     при изменении контента верстка сломается.
     лучше часть фона сделать либо псевдоэлементом(before/after)
     либо посмотреть в сторону свойства background-image: linear-gradient(...) */
@@ -232,12 +247,14 @@ html {
     justify-content: space-between;
     border-bottom: 1px solid #E0E0E0;
     padding-bottom: 85px;
-    margin: 0px -15px; /*задаем отрицательные отступы для внутренних блоков .service-item */
+/*задаем отрицательные отступы для внутренних блоков .service-item */
+    margin: 0px -15px; 
 }
 .service-item{
     display: flex;
     flex-direction: column;
-    margin: 0px 15px; /*задаем отступы*/
+    /*задаем отступы*/
+    margin: 0px 15px; 
     max-width: 33.3333%;
 }
 .service-item__img{}
@@ -266,6 +283,10 @@ html {
 
     color: #4985FF;
 }
+.service-item__a:hover{
+    opacity: 0.6;
+    transition: 0.2s;
+}
 
 /*Начало новой секции project*/
 .project{
@@ -280,7 +301,8 @@ html {
     font-size: 16px;
     line-height: 25px;
     text-align: center;
-    width: 65%;       /*задаем ширину тескта в процентах*/
+    /*задаем ширину тескта в процентах*/
+    width: 65%;       
 
     color: #999;
 }
@@ -296,8 +318,8 @@ html {
    
     background-image: url(./../images/work.jpg);
     background-repeat: no-repeat;
-    max-width: 100%;
-    /* в этой секции допустимо фиксануть высоту (надо разобраться???)*/
+    background-size: cover;
+/* в этой секции допустимо фиксануть высоту (570 надо разобраться???)*/
     height: 570px;
     margin-bottom: 165px;
     
@@ -313,39 +335,22 @@ html {
 }
 .work-video__img{
     position: absolute;
-    top: 200px;
-    left: 0px;
-    left: 475px;
-    max-width: 100%;
+    top:35%;
+    left:50%;
+    transform:translate(-50%); 
+    /*Сдвигает элемент по горизонтали(нашу куртинку видео на 50% от ее длины) 
+    на указанное значение. Положительное значение сдвигает вправо, отрицательное влево.*/
+    /*top: 200px;
+    left: 30%;*/
     padding-bottom: 85px;
     border-bottom: 1px solid #E0E0E0;
 }
-.play{
-    position: absolute;
-    top: 175px;
-    left: 345px;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    border: 1px solid #FFF;
-    padding: 20px 40px 20px 40px;
-    border-radius: 50px;
-    text-decoration: none;
+.iframe{
+    /*задаю ширину и высоту для видео
+    высота такая же как в макете*/
+    width: 760px;
+    height: 430px;
 }
-.play:hover{
-    background-color: #504DC2;
-    transition: 0.5s;
-}
-.play__img{}
-.play__text{
-    padding-left: 20px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 25px;
-    color: #FFF;
-    text-decoration: none;
-}
-
 /*Начало новой секции email*/
 .email{
     padding: 85px 0px;
@@ -358,14 +363,14 @@ html {
     text-align: center;
     padding-bottom: 20px;
 
-    color: #000000;
+    color: #000;
 }
 .email__text{
     font-size: 16px;
     line-height: 25px;
     text-align: center;
 
-    color: #999999;
+    color: #999;
 }
 .form{
     margin: 30px 0px 35px 0px;
@@ -374,7 +379,7 @@ html {
     
 }
 .form__input{
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-shadow: 0 0 10px #999;
     border: none;
     border-radius: 25px 0px 0px 25px;
     width: 269px;
@@ -382,13 +387,13 @@ html {
     font-size: 13px;
     line-height: 21px;
 
-    color: #999999;
+    color: #999;
 }
 .form__button{
     padding: 13px 36px 15px 26px;
     background-color: #4985FF;
     border: none;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-shadow: 0 0 10px #999;
     width: 190px;
     font-weight: 500;
     font-size: 16px;
@@ -396,7 +401,7 @@ html {
     text-align: center;
     border-radius: 0px 25px 25px 0px;
 
-    color: #FFFFFF;
+    color: #FFF;
 }
 .form__button:hover{
     opacity: 0.9;
@@ -407,7 +412,7 @@ html {
     line-height: 21px;
     text-align: center;
 
-    color: #999999;
+    color: #999;
 }
 /*Начало следующей секции info*/
 .info{
@@ -417,28 +422,80 @@ html {
     padding: 70px 0px;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #999999;
+    border-bottom: 1px solid #E0E0E0;
     
 }
-.contacts{}
 .info__title{
     padding-bottom: 5px;
     font-weight: 600;
     font-size: 18px;
     line-height: 22px;
 
-    color: #000000;
+    color: #000;
 }
-.info__text{
+.info__item{
     padding-top: 30px;
+    position: relative;
+}
+.info__mail{
+    padding-left: 20px;
     font-size: 14px;
     line-height: 22px;
 
-    color: #999999;
+    color: #999;
 }
+/*добавляем иконки*/
+.info__mail:before{     
+    font-family: 'icomoon';
+    content: "\f003";
+    position: absolute;
+    left: 0;
+}
+.info__phone{
+    padding-left: 20px;
+    font-size: 14px;
+    line-height: 22px;
 
-/*------------*/
+    color: #999;
+}
+.info__phone:before{
+    font-family: 'icomoon';
+    content: "\f095";
+    position: absolute;
+    left: 0;
+}
+.info__adress{
+    padding-left: 20px;
+    font-size: 14px;
+    line-height: 22px;
 
+    color: #999;
+}
+.info__adress:before{
+    font-family: 'icomoon';
+    content: "\f041";
+    position: absolute;
+    left: 0;
+}
+.info__link{
+    padding-left: 20px;
+    font-size: 14px;
+    line-height: 22px;
+    text-decoration: none;
+
+    color: #999;
+}
+.info__link:before{
+    font-family: 'icomoon';
+    content: "\f105";
+    position: absolute;
+    left: 0;
+}
+.info__link:hover,
+.info__link:focus{
+    color: #504DC2;
+    transition: 0.3s;
+}
 .footer{
     padding: 30px 0px;
     font-size: 13px;
@@ -446,4 +503,12 @@ html {
     text-align: center;
     background-color: #F6F6F8;
     color: #999;
+}
+
+@media (max-width: 1023px) { 
+    /*не срабатывает на расширении 1024px 
+    На 768px уже работает*/
+    .container {
+        width: 950px;
+}
 }
