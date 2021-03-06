@@ -505,10 +505,9 @@ html {
     color: #999;
 }
 
-@media (max-width: 1023px) { 
-    /*не срабатывает на расширении 1024px 
-    На 768px уже работает*/
+@media (max-width: 1200px) { 
+    /*сработает, если шарина экрана 1200px и меньше*/
     .container {
-        width: 950px;
+        width: 970px;
 }
 }
