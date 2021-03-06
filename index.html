@@ -97,17 +97,27 @@
     <section class="standart">
         <div class="container">
             <div class="standart__inner">
+                <!-- №2 ИПРАВИТЬ для  standart-text и standart__img
+                лучше задать какую-то max-width в %, иначе они могут начать делить
+                ширину отталкиваясь от своего контента, а должны примерно пополам-->
                 <div class="standart-text">
                     <h2 class="h2 standart-text__h2">Высокие стандарты разработки</h2>
                     <p class="standart-text__p">Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.  стандартной "рыбой" для текстов на латинице с начала XVI века. </p>
                     <a class="standart-text__a" href="#">Подробнее о компании</a>
                 </div>
                 <div class="standart__img">
+                    <!-- №2 ИПРАВИТЬ для картинки лучше задать max-width: 100%
+                    чтобы при адаптиве она не лезла за границы своего блока -->
                     <img src="./assets/images/laptop.png" alt="picture">
                 </div>
             </div>
             <div class="standart__box">
                 <div class="standart-item">
+                    <!-- №2 ИПРАВИТЬ точки потерялись,
+                    у меня картинки не отображаются(
+                    http://prntscr.com/10eb1n4
+                    обернуть и поровнять, число и картинка
+                    должны идти по одной линии -->
                     <img src="/assets/images/item.svg" alt="picture item">
                     <span class="standart-item__span">125</span>
                     <p class="standart-item__p">Our projects</p>
@@ -190,6 +200,7 @@
     </section>
     <section class="work-video">
         <h2 class="h2 work-video__title">Видео о нашей работе</h2>
+        <!-- №2 ИСПРАВИТЬ здесь что-то пошло не так с аттрибутами -->
         <p h2 work-video__text>Просто посмотрите, как мы работаем</p>
         <div class="work-video__img">
             <iframe class="iframe" src="https://www.youtube.com/embed/XjZlLcBCAE0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -197,7 +208,10 @@
     </section>
     <section class="email">
     <!--Здесь надо сделать маленький контейнер. Не совсем понимаю зачем?
-    Для адаптива????-->    
+    Для адаптива????-->
+    <!-- №2  можно оставить и просто container. На адаптиве,
+    при изменении контента, может начать прилипать контент к краям экрана
+    если не будет вложен в container с отступами по краям -->
         <div class="container--small">
             <h3 class="email__title">Подпишитесь на нашу рассылку</h3>
             <p class="email__text">Полезные статьи, акции, новости - получите все это сейчас!</p>
@@ -214,9 +228,17 @@
                 <div>
                     <h3 class="info__title">Контактная информация</h3>
                     <div class="info__item">
+                        <!-- №2 сюда лучше ссылку, пользователю
+                        полезнее будет не просто видеть почту, но и удобнее с
+                        ней работать,
+                        Пример, href="mailto:" для почты,
+                        href="tel:" для телефона-->
+                    <!--<a class="info__mail" href="mailto:test@test.ru">test@test.ru</a>-->
                         <p class="info__mail">test@test.ru</p>
                     </div>
                     <div class="info__item">
+                        <!-- №2 сюда тоже лучше ссылку, чтобы браузер
+                         предложил набрать номер при клике-->
                         <p class="info__phone">+8 777 555 66 99</p>
                     </div>
                     <div class="info__item">

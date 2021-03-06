@@ -1,3 +1,6 @@
+/* не критично, но для margin/padding в коде можно использоать запись короче,
+ сначала пометки делала, далее тоже можно исправить*/
+
 html {
     font-family: 'Montserrat', sans-serif;
 }
@@ -42,11 +45,14 @@ html {
 .nav {     
     display: flex;
     justify-content: flex-end;
-    padding: 20px 0px;
+    padding: 20px 0;
 }
 /*.nav_item{}*/
+/* #2 ИСПРАВИТЬ ссылка по умолчанию display:inline,
+ для задания корректных отступов нужно изменить display на inline-block,
+ сейчас они работаю криво - только для кнопки но не для внешних блоков */
 .nav__link {
-    padding: 20px 0px;
+    padding: 20px 0;
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
@@ -74,6 +80,7 @@ html {
     font-size: 48px;
     line-height: 64px;
     max-width: 829px;
+    /* #2 ИСПРАВИТЬ излишне, можно сократить запись padding*/
     padding: 20px 0px 50px 0px;
     color: #FFFFFF;
 }
@@ -96,12 +103,14 @@ html {
     opacity: 0.8;
     transition: 0.3s;
 }
-.header__link{}
+.header__link {}
+
 /*Начинается следующая секция design*/
-.design{
+.design {
+    /* #2 ИСПРАВИТЬ излишне, можно сократить запись margin */
     margin: 110px 0px 105px 0px;
 }
-.design__header{
+.design__header {
     text-align: center;
 }
 .h2 {
@@ -115,6 +124,7 @@ html {
     color: #323232;
 }
 .design__content {
+    /* #2 ИСПРАВИТЬ излишне, можно сократить запись margin */
     padding: 50px 0px 70px 0px;
     display: inline-block;
     font-size: 16px;
@@ -132,17 +142,16 @@ html {
 .design-website{
     display: flex;
     align-items: flex-start;
+    /* #2 ИСПРАВИТЬ лучше задать в % */
     max-width: 353px;
 }
 .design-website__picture{
-    border: 1px solid #E0E0E0 ; 
-/* чтобы получить ровный круг удобнее использовать 50%
-и при изменении размеров не поломается */
+    border: 1px solid #E0E0E0;
     border-radius: 50%;
     padding: 10px;
 }
 .design-website__img{
-    border: 1px solid #4985FF ;
+    border: 1px solid #4985FF;
     border-radius: 50%;
     padding: 25px;
 }
@@ -157,6 +166,7 @@ html {
     color: #000;
 }
 .design-website__title{
+    /* #2 ИСПРАВИТЬ излишне, можно сократить запись padding */
     padding: 46px 0px 12px 0px;
 }
 .design-website__text{
@@ -176,6 +186,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    /* #2 ИСПРАВИТЬ излишне, можно сократить запись padding */
     padding: 100px 0px 90px 0px;
     border-bottom: 1px solid #E0E0E0;
 }
@@ -184,6 +195,7 @@ html {
 .standart-text__p{
     font-size: 16px;
     line-height: 25px;
+    /* #2 ИСПРАВИТЬ излишне, можно сократить запись padding */
     padding: 40px 0px 30px 0px;
     color: #999;
 }
@@ -206,7 +218,7 @@ html {
 }
 .standart-item{
     display: flex;
-    /*Задаем максимальную ширину*/
+    /* #2 ИСПРАВИТЬ лучше в % */
     max-width: 104px; 
     flex-wrap: wrap;
     justify-content: space-between;
@@ -236,6 +248,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    /* #2 ИСПРАВИТЬ излишне, можно сократить запись padding */
     padding: 100px 0px 70px 0px;
 }
 .service__title{
@@ -251,6 +264,10 @@ html {
     margin: 0px -15px; 
 }
 .service-item{
+    /* #2 ИСПРАВИТЬ излишне, flex не нужен
+    здесь поток и так сверху вниз, а
+    чтобы картинка стала на всю ширину блока
+    достаточно width: 100% для нее */
     display: flex;
     flex-direction: column;
     /*задаем отступы*/
@@ -279,6 +296,9 @@ html {
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
+    /* #2 ИСПРАВИТЬ ссылка по умолчанию display:inline
+     и нормально работать с padding не будет,
+      исправить на inline-block*/
     padding-top: 30px;
 
     color: #4985FF;
@@ -445,6 +465,10 @@ html {
     color: #999;
 }
 /*добавляем иконки*/
+/* #2 Интересный иконочный шрифт, раньше юзали подобное,
+ но сегодня лучше использовать svg и с макетом совпадет.
+ Можно скачать картинку и добавить в background-image в before,
+  только размеры нужно будет указать. */
 .info__mail:before{     
     font-family: 'icomoon';
     content: "\f003";
@@ -505,10 +529,12 @@ html {
     color: #999;
 }
 
-@media (max-width: 1023px) { 
-    /*не срабатывает на расширении 1024px 
+/*немного не тот диапазон нужно с 0 до 1024*/
+/*@media (max-width: 1023px) { */
+@media (max-width: 1024px) {
+    /*не срабатывает на расширении 1024px
     На 768px уже работает*/
     .container {
         width: 950px;
-}
+    }
 }
