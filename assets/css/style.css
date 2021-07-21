@@ -1,3 +1,8 @@
+/* не критично, но для margin/padding в коде можно использоать запись короче,
+ сначала пометки делала, далее тоже можно исправить*/
+
+/*https://www.figma.com/file/gVc8u7tZSj9Cawgo5XiNiz/Templates-%234.-More-on-Figma.info-(Copy)?node-id=0%3A1*/
+
 html {
     font-family: 'Montserrat', sans-serif;
 }
@@ -42,11 +47,14 @@ html {
 .nav {     
     display: flex;
     justify-content: flex-end;
-    padding: 20px 0px;
+    padding: 20px 0;
 }
 /*.nav_item{}*/
+/* #2 ИСПРАВИТЬ ссылка по умолчанию display:inline,
+ для задания корректных отступов нужно изменить display на inline-block,
+ сейчас они работаю криво - только для кнопки но не для внешних блоков */
 .nav__link {
-    padding: 20px 0px;
+    padding: 20px 0;
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
@@ -74,20 +82,20 @@ html {
     font-size: 48px;
     line-height: 64px;
     max-width: 829px;
-    padding: 20px 0px 50px 0px;
-    color: #FFFFFF;
+    padding: 20px 0px 50px;
+    color: #FFF;
 }
 .header__btn{}
 /*задаем общий класс для большинства кнопок-ссылок на странице*/
 .btn{   
     display: inline-block;
     text-decoration: none;
-    padding: 13px 37px 12px 37px;
+    padding: 13px 37px 12px;
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
     background-color: #4985FF;
-    color: #FFFFFF;
+    color: #FFF;
     border-radius: 30px;
 }
 /*событие при наведении мыши на кнопку-ссылку*/
@@ -96,12 +104,13 @@ html {
     opacity: 0.8;
     transition: 0.3s;
 }
-.header__link{}
+.header__link {}
+
 /*Начинается следующая секция design*/
-.design{
-    margin: 110px 0px 105px 0px;
+.design {
+    margin: 110px 0px 105px;
 }
-.design__header{
+.design__header {
     text-align: center;
 }
 .h2 {
@@ -115,7 +124,7 @@ html {
     color: #323232;
 }
 .design__content {
-    padding: 50px 0px 70px 0px;
+    padding: 50px 0px 70px;
     display: inline-block;
     font-size: 16px;
     line-height: 25px;
@@ -132,17 +141,17 @@ html {
 .design-website{
     display: flex;
     align-items: flex-start;
-    max-width: 353px;
+    /*(исправил) #2 ИСПРАВИТЬ лучше задать в % 
+    max-width: 353px;*/
+    max-width: 30%;
 }
 .design-website__picture{
-    border: 1px solid #E0E0E0 ; 
-/* чтобы получить ровный круг удобнее использовать 50%
-и при изменении размеров не поломается */
+    border: 1px solid #E0E0E0;
     border-radius: 50%;
     padding: 10px;
 }
 .design-website__img{
-    border: 1px solid #4985FF ;
+    border: 1px solid #4985FF;
     border-radius: 50%;
     padding: 25px;
 }
@@ -157,7 +166,7 @@ html {
     color: #000;
 }
 .design-website__title{
-    padding: 46px 0px 12px 0px;
+    padding: 46px 0px 12px;
 }
 .design-website__text{
     font-size: 14px;
@@ -176,7 +185,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 100px 0px 90px 0px;
+    padding: 100px 0px 90px;
     border-bottom: 1px solid #E0E0E0;
 }
 .standart-text{}
@@ -184,7 +193,7 @@ html {
 .standart-text__p{
     font-size: 16px;
     line-height: 25px;
-    padding: 40px 0px 30px 0px;
+    padding: 40px 0px 30px;
     color: #999;
 }
 .standart-text__a{
@@ -198,20 +207,30 @@ html {
     opacity: 0.7;
     transition: 0.2s;
 }
-.standart__img{}
+.standart__content { /* вроде так?*/
+    max-width: 50%;
+}
+.standart__img{
+   max-width: 100%;
+}
 .standart__box{
     display: flex;
     justify-content: space-between;
-    padding: 70px 70px;
+    padding: 70px;
+    flex-wrap: wrap;
 }
 .standart-item{
     display: flex;
-    /*Задаем максимальную ширину*/
-    max-width: 104px; 
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
+    /* #2 ИСПРАВИТЬ лучше в % */
+    flex: 0 1 20%;
+    max-width: 20%;
+}
+.service-item__inner{
+    display: flex;
 }
 .standart-item__span{
+    padding-left: 20px;
     font-size: 36px;
     line-height: 53px;
     color: #000;
@@ -236,7 +255,8 @@ html {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 100px 0px 70px 0px;
+    /* #2(исправил) ИСПРАВИТЬ излишне, можно сократить запись padding */
+    padding: 100px 0px 70px;
 }
 .service__title{
     color: #FFF;
@@ -251,6 +271,10 @@ html {
     margin: 0px -15px; 
 }
 .service-item{
+    /* #2 ИСПРАВИТЬ излишне, flex не нужен
+    здесь поток и так сверху вниз, а
+    чтобы картинка стала на всю ширину блока
+    достаточно width: 100% для нее */
     display: flex;
     flex-direction: column;
     /*задаем отступы*/
@@ -279,6 +303,9 @@ html {
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
+    /* #2 ИСПРАВИТЬ ссылка по умолчанию display:inline
+     и нормально работать с padding не будет,
+      исправить на inline-block*/
     padding-top: 30px;
 
     color: #4985FF;
@@ -292,12 +319,12 @@ html {
 .project{
     text-align: center;
     background-color: #F6F6F8;
-    padding: 100px 0px 130px 0px;
+    padding: 100px 0px 130px;
 }
 .project__title{}
 .project__text{
     display: inline-block;
-    padding: 50px 0px 70px 0px;
+    padding: 50px 0px 70px;
     font-size: 16px;
     line-height: 25px;
     text-align: center;
@@ -327,9 +354,9 @@ html {
     color: #FFF;
 }
 .work-video__title{
-    padding: 70px 0px 30px 0px;
+    padding: 70px 0px 30px;
 }
-.work-video__test{
+.work-video__text{
     font-size: 16px;
     line-height: 25px;
 }
@@ -344,12 +371,6 @@ html {
     left: 30%;*/
     padding-bottom: 85px;
     border-bottom: 1px solid #E0E0E0;
-}
-.iframe{
-    /*задаю ширину и высоту для видео
-    высота такая же как в макете*/
-    width: 760px;
-    height: 430px;
 }
 /*Начало новой секции email*/
 .email{
@@ -373,7 +394,7 @@ html {
     color: #999;
 }
 .form{
-    margin: 30px 0px 35px 0px;
+    margin: 30px 0px 35px;
     display: flex;
     justify-content: center;
     
@@ -438,44 +459,59 @@ html {
     position: relative;
 }
 .info__mail{
-    padding-left: 20px;
+    padding-left: 35px;
+    text-decoration: none;
     font-size: 14px;
-    line-height: 22px;
+
+    position: relative;
 
     color: #999;
 }
 /*добавляем иконки*/
-.info__mail:before{     
-    font-family: 'icomoon';
-    content: "\f003";
+.info__mail:before{    
+    content: "";
+    background-image: url(./../images/email.svg);
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 15px;
     position: absolute;
     left: 0;
 }
 .info__phone{
-    padding-left: 20px;
+    padding-left: 35px;
     font-size: 14px;
-    line-height: 22px;
+    text-decoration: none;
 
     color: #999;
 }
 .info__phone:before{
-    font-family: 'icomoon';
-    content: "\f095";
+    content: "";
+    background-image: url(./../images/call.svg);
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 15px;
     position: absolute;
     left: 0;
 }
 .info__adress{
-    padding-left: 20px;
+    padding-left: 35px;
     font-size: 14px;
-    line-height: 22px;
 
     color: #999;
 }
 .info__adress:before{
-    font-family: 'icomoon';
-    content: "\f041";
+    content: "";
+    background-image: url(./../images/placeholder.svg);
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 15px;
     position: absolute;
     left: 0;
+}
+.info__phone:hover,
+.info__mail:hover{
+    color: #504DC2;
+    transition: 0.3s;
 }
 .info__link{
     padding-left: 20px;
@@ -486,10 +522,14 @@ html {
     color: #999;
 }
 .info__link:before{
-    font-family: 'icomoon';
-    content: "\f105";
+    content: "";
+    background-image: url(./../images/right-arrow.svg);
+    background-repeat: no-repeat;
+    width: 10px;
+    height: 10px;
     position: absolute;
     left: 0;
+    top: 35px;
 }
 .info__link:hover,
 .info__link:focus{
@@ -504,10 +544,23 @@ html {
     background-color: #F6F6F8;
     color: #999;
 }
-
-@media (max-width: 1200px) { 
-    /*сработает, если шарина экрана 1200px и меньше*/
+/*@media (max-width: 1200px) { 
+    /*сработает, если шарина экрана 1200px и меньше
     .container {
         width: 970px;
 }
+
+/*@media (max-width: 1024px) {
+    .container {
+        width: 970px;
+    }
 }
+
+@media (max-width: 768px) {
+    .container {
+        width: 700px;
+    }
+}
+*/
+
+
