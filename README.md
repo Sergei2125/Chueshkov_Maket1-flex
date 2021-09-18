@@ -1,5 +1,5 @@
 ## Landing Page
 
-###Technologies:
+### Technologies:
 +ul HTML
 +ul CSS
